@@ -7,6 +7,7 @@
       p {
         color: purple;
         margin: 0.5em 0;
+        font-size: xx-large;
       }
 
       * {
@@ -30,6 +31,9 @@
     let substring = 'green eggs and ham';
 
     // Add your code here
+    quoteLength = quote.length;
+    index = quote.indexOf(substring);
+    revisedQuote = quote.slice(0, (index + substring.length + 1) );
 
     // Don't edit the code below here!
 
