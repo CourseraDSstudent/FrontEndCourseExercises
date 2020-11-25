@@ -29,7 +29,10 @@
     let quote = 'I dO nOT lIke gREen eGgS anD HAM';
 
     // Add your code here
-
+    allSmall = quote.toLowerCase();
+    fixedQuote =  allSmall.replace( 'i d', 'I d' );
+    finalQuote = fixedQuote.replace('green eggs and ham', 'xalasmeno kounoupidi.');
+    
     // Don't edit the code below here!
 
     const section = document.querySelector('section');
