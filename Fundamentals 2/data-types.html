@@ -1,26 +1,65 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>JS Data Types</title>
     <style>
-        * { border: 2px solid lightgray;}
-        /* table {
-            border: darkblue 2px solid;
-            border-collapse: collapse;
+        /* * { border: 2px solid lightgray;} */
+        html {
+            background: url(./pexels-pixabay-210607.jpg);
+            background-color: transparent;
         }
 
-        tr, td {
-            border: 1px darkblue solid;
-        } */
+        h1 {
+            text-align: center;
+        }
+
+        table {
+            margin: 10% 15%;
+            border: darkgray 1px solid;
+            border-collapse: collapse;
+            background-color: white;
+        }
+
+        tr,
+        td {
+            border: 1px darkgray solid;
+        }
+
+        .example {
+            display: inline-block;
+            border: 1px solid #d3dce6;
+            background-color: #f5f5f5;
+            column-width: 200px;
+            padding: 0 8px;
+            border-radius: 4px;
+        }
+
+        .description {
+            padding: 0 10px;
+            width: 30%;
+        }
+
+        .reference {
+            column-width: 200px;
+        }
+
+        span {
+            padding: 0 8px;
+            background-color: #d1cccc;
+        }
     </style>
 </head>
+
 <body>
     <table class="js-dataTypes-table">
         <thead>
             <tr class="table-title">
-                <td colspan="4"><h1>The basic JavaScript Data Types</h1></td>
+                <td colspan="4">
+                    <h1>The basic JavaScript Data Types</h1>
+                </td>
             </tr>
 
         </thead>
@@ -34,60 +73,100 @@
             </tr>
             <tr>
                 <td>Number</td>
-                <td>Primitive (means it is not an object and has no methods). Represents integer or floating-point numbers between -(2^53 - 1) and 2^53 - 1 </td>
-                <td>89 3.557 3e-2 29.42</td> <!-- format it -->
-                <td><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type" target="_blank">JavaScript data types and data structures</a></td>
+                <td class="description">Primitive (means it is not an object and has no methods). Represents integer or floating-point
+                    numbers between -(2<sup>53</sup> - 1) and 2 <sup>53</sup> - 1 </td>
+                <td class="example"><span>89</span> <span>3.557</span> <span>3e-2</span> <span>29.42</span></td>
+                <!-- format it -->
+                <td class="reference"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type"
+                        target="_blank">JavaScript data types and data structures</a></td>
             </tr>
             <tr>
                 <td>BigInt</td>
-                <td>The other JS primitive for numbers. This is for the big ones. It was coined recently to overcome the technical limitation of the Number type so it represents numbers bigger than 9007199254740991 and smaller than -9007199254740991. They created by appending a n to the end of an integer.</td>
-                <td>const myBigInt = 9007199254740991000n;</td>
-                <td></td>
+                <td class="description">The other JS primitive for numbers. This is for the big ones. It was coined recently to overcome the
+                    technical limitation of the Number type so it represents numbers bigger than 9007199254740991 and
+                    smaller than -9007199254740991. They created by appending a n to the end of an integer.</td>
+                <td class="example"><span>const myBigInt = 9007199254740991000n;</span></td>
+                <td class="reference"></td>
             </tr>
             <tr>
                 <td>String</td>
-                <td>This primitive is the JavaScript's type for representing text. Actually an immutable ordered sequence of 16-bit values each of which represents a Unicode character.</td>
-                <td></td>
-                <td><a href="" target="_blank"></a>JavaScript: The Definitive Guide by David Flanagan</td>
+                <td class="description">This primitive is the JavaScript's type for representing text. Actually an immutable ordered
+                    sequence of 16-bit values each of which represents a Unicode character.</td>
+                <td class="example"><span>const fullName = "Jim Smith"</span><br><span>const myString "I am a beautiful
+                        string</span>"</td>
+                <td class="reference"><a href="https://www.amazon.com/JavaScript-Definitive-Guide-Activate-Guides/dp/0596805527"
+                        target="_blank">JavaScript: The Definitive Guide by David Flanagan</a></td>
             </tr>
             <tr>
                 <td>Boolean</td>
-                <td>This primitive data type has two values, true or false. It is useful in controlling program flow using conditional statements like if..else, while..do something</td>
-                <td></td>
-                <td></td>
+                <td class="description">This primitive data type has two values, true or false. It is useful in controlling program flow
+                    using conditional statements like if..else, while..do something</td>
+                <td class="example"> <span>let doorIsOpen = true;<span><br>( 2 > 1 ); //returns true</span></span></td>
+                <td class="reference"></td>
             </tr>
             <tr>
                 <td>"null" value</td>
-                <td>Another primitive is the special value "null". It is usually used to indicate the absence of a value. It can be used to indicate "no value" for numbers, strings, and objects. It is a language keyword.</td>
-                <td></td>
-                <td></td>
+                <td class="description">Another primitive is the special value "null". It is usually used to indicate the absence of a
+                    value. It can be used to indicate "no value" for numbers, strings, and objects. It is a language
+                    keyword.</td>
+                <td class="example"><span>b = null;</span><br><span>document.write(b) // Print: null</span> </td>
+                <td class="reference"></td>
             </tr>
             <tr>
                 <td>"undefined" value</td>
-                <td>Also a primitive. Like the "null" value the "undefined" data type represents the absence of value but in a deeper way. If a variable have not been initialized, if an array or an object property not exist, a function has no return value JavaScript returns this value. It is a predefined global value.</td>
-                <td>let year; <br>alert(year); // shows "undefined"</td>
-                <td></td>
+                <td class="description">Also a primitive. Like the "null" value the "undefined" data type represents the absence of value
+                    but in a deeper way. If a variable have not been initialized, if an array or an object property not
+                    exist, a function has no return value JavaScript returns this value. It is a predefined global
+                    value.</td>
+                <td class="example"><span>let year; <br>alert(year); // shows "undefined"</span></td>
+                <td class="reference"></td>
             </tr>
             <tr>
                 <td>Objects and Symbols</td>
-                <td>It's a fundamental datatype. An object is a composite value, aggregates multiple values (primitive values or other objects). It composed of pairs of keys and values. Objects include Arrays. <br>Symbol type is used to create unique identifiers for objects. The keys of the objects can be only string type or symbol type, nothing else. </td>
-                <td></td>
-                <td></td>
+                <td class="description">Object is a fundamental datatype. An object is a composite value, aggregates multiple values (primitive
+                    values or other objects). Can store two kinds of values: 1. properties for static values 2. methods
+                    for dynamic values. Objects include Arrays. <br><br>Symbol type is used to create unique (and immutable)
+                    identifiers for objects. The keys of the objects can be only string type or symbol type, nothing
+                    else. </td>
+                <td class="example">
+<!--DO NOT FORMAT THE FOLLOWING LINES-->
+<pre><code>
+var user001 = {
+firstName: "John",
+lastName: "Smith",
+dateOfBirth: 1985,
+getName: function(){
+    return "User's name: " 
+    + this.firstName 
+    + " " 
+    + this.lastName;
+    }
+};
+</code></pre>
+<!-- DO NOT FORMAT THE ABOVE LINES -->
+
+                </td>
+                <td class="reference"><a
+                        href="https://www.developerdrive.com/4-ways-to-create-an-object-in-javascript-with-examples/">https://www.developerdrive.com/</a>
+                </td>
             </tr>
             <tr>
                 <td>typeOf operator</td>
-                <td>This data type is an operator that returns a string indicating the type of the uvevaluated operand.</td>
-                <td>typeOf true; // "boolean"<br>typeOf 23; // "number"</td>
-                <td><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/typeof" target="_blank">MDN web docs | typeof</a></td>
+                <td>This data type is an operator that returns a string indicating the type of the uvevaluated operand.
+                </td>
+                <td class="example"><span>typeOf true; // "boolean"<br>typeOf 23; // "number"</span></td>
+                <td><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/typeof"
+                        target="_blank">MDN web docs | typeof</a></td>
             </tr>
         </tbody>
 
         <tfoot>
-            
+
         </tfoot>
 
 
     </table>
-    
+
 </body>
+
 </html>
