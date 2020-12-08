@@ -26,33 +26,47 @@
             const rock = 'rock'.toUpperCase();
             const paper = 'paper'.toUpperCase();
             const scissors = 'scissors'.toUpperCase();
-            // const humanScore = 0;
-            // const computerScore = 0;
+            const humanWinMsg = 'You win!!!';
+            const computerWinMsg = 'Computer win!'
+            const drawMsg = 'Draw, play again!'
+            const winCondition1 = 'Rock beats Scissors...'
+            const winCondition2 = 'Scissors beat Paper...'
+            const winCondition3 = 'Paper beats Rock...'
+            const acceptableInputMsg = 'You must write "Rock" or "Paper" or "Scissors" (nothing else).'
+            let humanScore = 0;
+            let computerScore = 0;
             if (playerSelection == rock && computerSelection == rock) {
-                console.log('Draw, play again!')
+                console.log( drawMsg )
             } else if (playerSelection == rock && computerSelection == paper) {
-                console.log('Computer wins! Paper beats Rock...')
+                console.log( computerWinMsg + ' ' + winCondition3)
             } else if (playerSelection == rock && computerSelection == scissors) {
-                console.log('You win!!! Rock beats Scissors...')
+                console.log( humanWinMsg + ' ' + winCondition1 )
             } else if (playerSelection == paper && computerSelection == rock) {
-                console.log('You win!!! Paper beats Rock')
+                console.log( humanWinMsg + ' ' + winCondition3 )
             } else if (playerSelection == paper && computerSelection == paper) {
-                console.log('Draw, play again!')
+                console.log( drawMsg )
             } else if (playerSelection == paper && computerSelection == scissors) {
-                console.log('Computer wins! Scissors beat Paper')
+                console.log( computerWinMsg + ' ' + winCondition2 )
             } else if (playerSelection == scissors && computerSelection == rock) {
-                console.log('Computer wins! Rock beats Scissors')
+                console.log( computerWinMsg + ' ' + winCondition1 )
             } else if (playerSelection == scissors && computerSelection == paper) {
-                console.log('You win!!! Scissors beat Paper')
+                console.log( humanWinMsg + ' ' + winCondition2 )
             } else if (playerSelection == scissors && computerSelection == scissors) {
-                console.log('Draw, play again!')
-            } else { console.log('You must write Rock or Paper or Scissors (nothing else)') }
+                console.log( drawMsg )
+            } else { console.log( acceptableInputMsg ) }
         };
 
         function game() {
             const playerSelection = humanPlayerPlay();
             const computerSelection = computerPlay();
+            let humanScore = 0;
+            let computerScore = 0;
             playRound(playerSelection, computerSelection);
+            // if (playRound().includes('You')) {
+            //     humanScore += 1;
+            // } else if (playRound().includes('Computer')) {
+            //     computerScore +=1;
+            // }
         }
 
         game();
