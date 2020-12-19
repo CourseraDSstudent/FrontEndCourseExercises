@@ -35,25 +35,31 @@
             const acceptableInputMsg = 'You must write "Rock" or "Paper" or "Scissors" (nothing else).'
             let humanScore = 0;
             let computerScore = 0;
-            if (playerSelection == rock && computerSelection == rock) {
-                console.log( drawMsg )
-            } else if (playerSelection == rock && computerSelection == paper) {
-                console.log( computerWinMsg + ' ' + winCondition3)
-            } else if (playerSelection == rock && computerSelection == scissors) {
-                console.log( humanWinMsg + ' ' + winCondition1 )
-            } else if (playerSelection == paper && computerSelection == rock) {
-                console.log( humanWinMsg + ' ' + winCondition3 )
-            } else if (playerSelection == paper && computerSelection == paper) {
-                console.log( drawMsg )
-            } else if (playerSelection == paper && computerSelection == scissors) {
-                console.log( computerWinMsg + ' ' + winCondition2 )
-            } else if (playerSelection == scissors && computerSelection == rock) {
-                console.log( computerWinMsg + ' ' + winCondition1 )
-            } else if (playerSelection == scissors && computerSelection == paper) {
-                console.log( humanWinMsg + ' ' + winCondition2 )
-            } else if (playerSelection == scissors && computerSelection == scissors) {
-                console.log( drawMsg )
-            } else { console.log( acceptableInputMsg ) }
+            // if (playerSelection == 'ROCK' && computerSelection == 'ROCK') {
+                // console.log('YOU: ' + playerSelection + ' ' + 'COMPUTER: ' + computerSelection + ' -> ' + drawMsg)
+            // } else if (playerSelection == rock && computerSelection == paper) {
+                // return computerScore += 1;
+                // console.log('YOU: ' + playerSelection + ' ' + 'COMPUTER: ' + computerSelection + ' -> ' + computerWinMsg + ' ' + winCondition3 + computerScore);
+            // } else if (playerSelection == rock && computerSelection == scissors) {
+            //     return humanScore += 1;
+            //     console.log('YOU: ' + playerSelection + ' ' + 'COMPUTER: ' + computerSelection + ' -> ' + humanWinMsg + ' ' + winCondition1)
+            // } else if (playerSelection == paper && computerSelection == rock) {
+            //     return humanScore += 1;
+            //     console.log('YOU: ' + playerSelection + ' ' + 'COMPUTER: ' + computerSelection + ' -> ' + humanWinMsg + ' ' + winCondition3)
+            // } else if (playerSelection == 'PAPER' && computerSelection == 'PAPER') {
+                // console.log('YOU: ' + playerSelection + ' ' + 'COMPUTER: ' + computerSelection + ' -> ' + drawMsg)
+            // } else if (playerSelection == paper && computerSelection == scissors) {
+            //     return computerScore += 1;
+            //     console.log('YOU: ' + playerSelection + ' ' + 'COMPUTER: ' + computerSelection + ' -> ' + computerWinMsg + ' ' + winCondition2)
+            // } else if (playerSelection == scissors && computerSelection == rock) {
+            //     return computerScore += 1;
+            //     console.log('YOU: ' + playerSelection + ' ' + 'COMPUTER: ' + computerSelection + ' -> ' + computerWinMsg + ' ' + winCondition1)
+            // } else if (playerSelection == scissors && computerSelection == paper) {
+            //     return humanScore += 1;
+            //     console.log('YOU: ' + playerSelection + ' ' + 'COMPUTER: ' + computerSelection + ' -> ' + humanWinMsg + ' ' + winCondition2)
+            // } else if (playerSelection == 'SCISSORS' && computerSelection == 'SCISSORS') {
+                // console.log('YOU: ' + playerSelection + ' ' + 'COMPUTER: ' + computerSelection + ' -> ' + drawMsg)
+            // } else { console.log(acceptableInputMsg) }
         };
 
         function game() {
@@ -61,19 +67,112 @@
             const computerSelection = computerPlay();
             let humanScore = 0;
             let computerScore = 0;
+            const humanWinMsg = 'You win!!!';
+            const computerWinMsg = 'Computer win!'
+            const drawMsg = 'Draw, play again!'
+            const winCondition1 = 'Rock beats Scissors...'
+            const winCondition2 = 'Scissors beat Paper...'
+            const winCondition3 = 'Paper beats Rock...'
             playRound(playerSelection, computerSelection);
-            // if (playRound().includes('You')) {
+            // We have a winner
+            if(playerSelection !== computerSelection) {
+                if (playerSelection === 'ROCK' && computerSelection === 'PAPER'){
+                console.log('YOU: ' + playerSelection + ' ' + 'COMPUTER: ' + computerSelection + ' -> ' + ' ' + winCondition3 + computerScore + 'Round winner is Computer');
+                return computerScore += 1;
+                } else if (playerSelection === 'ROCK' && computerSelection === 'SCISSORS') {
+                    console.log('YOU: ' + playerSelection + ' ' + 'COMPUTER: ' + computerSelection + ' -> ' + winCondition1 + 'Round winner is YOU');
+                    return humanScore += 1;
+                } else if (playerSelection === 'PAPER' && computerSelection === 'ROCK') {
+                    console.log('YOU: ' + playerSelection + ' ' + 'COMPUTER: ' + computerSelection + ' -> ' + winCondition3 + 'Round winner is YOU');
+                    return humanScore += 1;
+                } else if (playerSelection ==='PAPER' && computerSelection ==='SCISSORS') {
+                    console.log('YOU: ' + playerSelection + ' ' + 'COMPUTER: ' + computerSelection + ' -> ' + ' ' + winCondition2 + 'Round winner is Computer');
+                    return computerScore += 1;
+                } else if (playerSelection ==='SCISSORS' && computerSelection === 'ROCK') {
+                    console.log('YOU: ' + playerSelection + ' ' + 'COMPUTER: ' + computerSelection + ' -> ' + winCondition1 + 'Round winner is Computer');
+                    return computerScore += 1;
+                } else if (playerSelection === 'SCISSORS' && computerSelection === 'PAPER') {
+                    console.log('YOU: ' + playerSelection + ' ' + 'COMPUTER: ' + computerSelection + ' -> ' + winCondition2 + 'Round winner is YOU');
+                    return humanScore += 1;
+                }
+            }
+            // We DON'T have winner. It's a draw
+            if (playerSelection == 'ROCK' && computerSelection == 'ROCK') {
+                console.log('YOU: ' + playerSelection + ' ' + 'COMPUTER: ' + computerSelection + ' -> ' + drawMsg)
+            } else if (playerSelection == 'PAPER' && computerSelection == 'PAPER') {
+                console.log('YOU: ' + playerSelection + ' ' + 'COMPUTER: ' + computerSelection + ' -> ' + drawMsg)
+            } else if (playerSelection == 'SCISSORS' && computerSelection == 'SCISSORS') {
+                console.log('YOU: ' + playerSelection + ' ' + 'COMPUTER: ' + computerSelection + ' -> ' + drawMsg)
+            } else { console.log(acceptableInputMsg) }
+
+
+
+
+
+
+            // console.log('human:' + humanScore + 'computer:' + computerScore);
+            // if (String(playRound(playerSelection, computerSelection)).includes('You') ) {
             //     humanScore += 1;
-            // } else if (playRound().includes('Computer')) {
+            //     return humanScore;
+            // } else if ( String(playRound(playerSelection, computerSelection)).includes('Computer') ) {
             //     computerScore +=1;
+            //     return computerScore;
             // }
         }
 
-        game();
-        game();
-        game();
-        game();
-        game();
+        let humanScore = game();
+
+        function fiveGames() {
+           let humanScore = game();
+           let computerScore = game();
+           game();
+           if (game() === 'Round winner is YOU') {
+               humanScore += 1;
+           } else if (game() === 'Round winner is Computer') {
+               computerScore +=1;
+           }
+        //    console.log('You: ' + humanScore + ' - Computer ' + computerScore);
+           game();
+           if (game() === 'Round winner is YOU') {
+               humanScore += 1;
+           } else if (game() === 'Round winner is Computer') {
+               computerScore +=1;
+           }
+        //    console.log('You: ' + humanScore + ' - Computer ' + computerScore);
+           game();
+           if (game() === 'Round winner is YOU') {
+               humanScore += 1;
+           } else if (game() === 'Round winner is Computer') {
+               computerScore +=1;
+           }
+        //    console.log('You: ' + humanScore + ' - Computer ' + computerScore);
+           game();
+           if (game() === 'Round winner is YOU') {
+               humanScore += 1;
+           } else if (game() === 'Round winner is Computer') {
+               computerScore +=1;
+           }
+        //    console.log('You: ' + humanScore + ' - Computer ' + computerScore);
+           game();
+           console.log('You: ' + humanScore + ' - Computer ' + computerScore);
+        }
+
+        fiveGames();
+
+        /*
+        function resultAndScore() {
+            let humanScore = 0;
+            let computerScore = 0;
+            game();
+            if (playRound(playerSelection, computerSelection).includes('You win')) {
+                return humanScore += 1;
+            } else if (playRound(playerSelection, computerSelection).includes('Computer')){
+                return computerScore += 1;
+            }
+        }
+        resultAndScore();
+        */
+
     </script>
 
 </body>
