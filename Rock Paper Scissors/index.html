@@ -15,20 +15,18 @@
             let gameElements = ['Rock', 'Paper', 'Scissors'];
             let selectedElement = gameElements[Math.floor(Math.random() * 3)];
             return selectedElement.toUpperCase();
-        }
+        };
 
         function humanPlayerPlay() {
             elementChoice = window.prompt('Please select Rock or Paper or Scissors')
             return elementChoice.toUpperCase();
-        }
+        };
 
         function playRound(playerSelection, computerSelection) {
             const rock = 'rock'.toUpperCase();
             const paper = 'paper'.toUpperCase();
             const scissors = 'scissors'.toUpperCase();
             const acceptableInputMsg = 'You must write "Rock" or "Paper" or "Scissors" (nothing else).'
-            let humanScore = 0;
-            let computerScore = 0;
         };
 
         function game() {
@@ -76,17 +74,14 @@
                 console.log('YOU: ' + playerSelection + ' ' + 'COMPUTER: ' + computerSelection + ' -> ' + drawMsg)
             } else { console.log( 'Not a valid input' ) }
 
-        }
+        };
+
         function fiveGames() {
-            let humanScore = game();
-            let computerScore = game();
             game();
             game();
             game();
             game();
             game();
-            // console.log( 'You: ' + humanScore + ' - Computer ' + computerScore );
-            
         }
 
         fiveGames();
