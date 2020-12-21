@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Rock Paper Scissors</h1>
+    <script>
+
+        function computerPlay() {
+            let gameElements = ['Rock', 'Paper', 'Scissors'];
+            let selectedElement = gameElements[Math.floor(Math.random() * 3)];
+            return selectedElement.toUpperCase();
+        };
+
+        function humanPlayerPlay() {
+            elementChoice = window.prompt('Please select Rock or Paper or Scissors')
+            return elementChoice.toUpperCase();
+        };
+
+        function playRound(playerSelection, computerSelection) {
+        };
+
+        function game() {
+            const playerSelection = humanPlayerPlay();
+            const computerSelection = computerPlay();
+            let humanScore = 0;
+            let computerScore = 0;
+            const humanWinMsg = 'You win!!!';
+            const computerWinMsg = 'Computer win!'
+            const drawMsg = 'Draw, play again!'
+            const winCondition1 = 'Rock beats Scissors...'
+            const winCondition2 = 'Scissors beat Paper...'
+            const winCondition3 = 'Paper beats Rock...'
+            playRound(playerSelection, computerSelection);
+
+            // We have a winner
+            if (playerSelection !== computerSelection) {
+                if (playerSelection === 'ROCK' && computerSelection === 'PAPER') {
+                    console.log('YOU: ' + playerSelection + ' ' + 'COMPUTER: ' + computerSelection + ' -> ' + winCondition3 + 'Round winner is Computer');
+                    return computerScore += 1;
+                } else if (playerSelection === 'ROCK' && computerSelection === 'SCISSORS') {
+                    console.log('YOU: ' + playerSelection + ' ' + 'COMPUTER: ' + computerSelection + ' -> ' + winCondition1 + 'Round winner is YOU');
+                    return humanScore += 1;
+                } else if (playerSelection === 'PAPER' && computerSelection === 'ROCK') {
+                    console.log('YOU: ' + playerSelection + ' ' + 'COMPUTER: ' + computerSelection + ' -> ' + winCondition3 + 'Round winner is YOU');
+                    return humanScore += 1;
+                } else if (playerSelection === 'PAPER' && computerSelection === 'SCISSORS') {
+                    console.log('YOU: ' + playerSelection + ' ' + 'COMPUTER: ' + computerSelection + ' -> ' + ' ' + winCondition2 + 'Round winner is Computer');
+                    return computerScore += 1;
+                } else if (playerSelection === 'SCISSORS' && computerSelection === 'ROCK') {
+                    console.log('YOU: ' + playerSelection + ' ' + 'COMPUTER: ' + computerSelection + ' -> ' + winCondition1 + 'Round winner is Computer');
+                    return computerScore += 1;
+                } else if (playerSelection === 'SCISSORS' && computerSelection === 'PAPER') {
+                    console.log('YOU: ' + playerSelection + ' ' + 'COMPUTER: ' + computerSelection + ' -> ' + winCondition2 + 'Round winner is YOU');
+                    return humanScore += 1;
+                }
+            }
+
+            // We DON'T have winner. It's a draw
+            if (playerSelection === 'ROCK' && computerSelection === 'ROCK') {
+                console.log('YOU: ' + playerSelection + ' ' + 'COMPUTER: ' + computerSelection + ' -> ' + drawMsg)
+            } else if (playerSelection === 'PAPER' && computerSelection === 'PAPER') {
+                console.log('YOU: ' + playerSelection + ' ' + 'COMPUTER: ' + computerSelection + ' -> ' + drawMsg)
+            } else if (playerSelection === 'SCISSORS' && computerSelection === 'SCISSORS') {
+                console.log('YOU: ' + playerSelection + ' ' + 'COMPUTER: ' + computerSelection + ' -> ' + drawMsg)
+            } else { console.log( 'Not a valid input' ) }
+
+        };
+
+        function fiveGames() {
+            game();
+            game();
+            game();
+            game();
+            game();
+        }
+
+        fiveGames();
+
+    </script>
+
+</body>
+
+</html>
