@@ -1,0 +1,60 @@
+.html {
+    font-size: 65%;
+    box-sizing: border-box;
+}
+
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+.calculator {
+    border: 2px solid lightgray;
+    position: absolute;
+    top: 30%;
+    left: 30%;
+    width: 350px;
+}
+
+.calculator-screen {
+    width: 100%;
+    font-size: 3rem;
+    height: 60px;
+    text-align: right;
+}
+
+button {
+    height: 50px;
+    font-size: 2rem;
+}
+
+button:hover {
+    background-color: #fff;
+}
+
+.operator {
+    color:blue
+}
+
+#equal {
+    height: 100%;
+    background-color: aquamarine;
+    grid-area: 2 / 4 / 6 / 5;
+}
+
+#equal:hover {
+    background-color: rgb(196, 255, 235);
+}
+
+.all-clear {
+    color: red;
+}
+
+.all-clear:hover {
+    background-color: #fff;
+}
+
+.calculator-keys {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+}
